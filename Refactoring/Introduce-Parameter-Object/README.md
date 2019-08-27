@@ -1,4 +1,4 @@
-![Pr-Obj](https://github.com/aza0092/Refactoring-Improving-the-Design-of-Existing-Code/Refactoring/Introduce-Parameter-Object/img/Pr-Obj.PNG)
+![Pr-Obj](Refactoring/Introduce-Parameter-Object/img/Pr-Obj.PNG)
 
 # Introduce Parameter Object
 
