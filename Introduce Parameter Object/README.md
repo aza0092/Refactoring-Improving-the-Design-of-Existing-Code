@@ -1,4 +1,4 @@
-![Pr-Obj](Pr-Obj.PNG)
+![Pr-Obj](/img/Pr-Obj.PNG)
 
 # Introduce Parameter Object
 
