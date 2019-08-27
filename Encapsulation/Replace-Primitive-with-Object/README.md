@@ -12,4 +12,4 @@
 - Create class and provide getter/setter to encapsulate the values
 - Change  setter to create new instance of the value class and store it
 
-#[Example](https://github.com/aza0092/Refactoring-Improving-the-Design-of-Existing-Code/commit/93c0eeab81f18316478979dbcf0d29decd3c5b87)
+[Example](https://github.com/aza0092/Refactoring-Improving-the-Design-of-Existing-Code/commit/93c0eeab81f18316478979dbcf0d29decd3c5b87)
