@@ -9,7 +9,9 @@ is what tells me it's time for a Special Case Object.
 */
 
 class Site {
-  get customer() {return this._customer;}
+  get customer() {
+	  return (this._customer === "unknown") ? new UnknownCustomer() :  this._customer;
+  }
 }
 
 //There are various properties of the customer class; I'll consider three of them.
