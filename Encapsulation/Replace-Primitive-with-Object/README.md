@@ -1,4 +1,4 @@
-![Prm-Obj](https://github.com/aza0092/Refactoring-Improving-the-Design-of-Existing-Code/Encapsulation/Replace-Primitive-with-Object/img/Prm-Obj.PNG)
+![PrmObj](/Encapsulation/Replace-Primitive-with-Object/img/Prm-Obj.PNG)
 
 # Replace Primitive with Object
 
