@@ -1,4 +1,4 @@
-[PrObj](/Refactoring/Introduce-Parameter-Object/img/Pr-Obj.PNG)
+![PrObj](/Refactoring/Introduce-Parameter-Object/img/Pr-Obj.PNG)
 
 # Introduce Parameter Object
 
