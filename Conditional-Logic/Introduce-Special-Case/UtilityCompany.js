@@ -28,14 +28,29 @@ class Customer {
 
 // I then add an Unknown Customer class
 class UnknownCustomer {
+	//clieant 1..
   get isUnknown() {return true;}
+  get name() {return "occupant";}
+  
+  //client 2&3..
+  get billingPlan()    {return registry.billingPlans.basic;}
+  set billingPlan(arg) { /* ignore */ }
+  
+  //client 4..
+  get paymentHistory() {return new NullPaymentHistory();}
   
   function isUnknown(arg) {
-  if (!((arg instanceof Customer) || (arg === "unknown")))
-    throw new Error(`investigate bad value: <${arg}>`);
-  return (arg === "unknown");
- }
+    if (!(arg instanceof Customer || arg instanceof UnknownCustomer))
+      throw new Error(`investigate bad value: <${arg}>`);
+    return arg.isUnknown;
+  }
 }
+
+//client 4...
+class NullPaymentHistory…
+
+get weeksDelinquentInLastYear() {return 0;}
+
 
 
 // Most of the time, a site has a customer, 
@@ -49,22 +64,18 @@ client 1…
 
   const aCustomer = site.customer;
   // ... lots of intervening code ...
-  let customerName;
+  customerName = aCustomer.name;
   if (isUnknown(aCustomer)) customerName = "occupant";
   else customerName = aCustomer.name;
 
 client 2…
 
-  const plan = (isUnknown(aCustomer)) ?
-        registry.billingPlans.basic
-        : aCustomer.billingPlan;
+  const plan = aCustomer.billingPlan;
 
 client 3…
 
-  if (!isUnknown(aCustomer)) aCustomer.billingPlan = newPlan;
+  aCustomer.billingPlan = newPlan;
 
 client 4…
 
-  const weeksDelinquent = isUnknown(aCustomer) ?
-        0
-        : aCustomer.paymentHistory.weeksDelinquentInLastYear;
+  const weeksDelinquent = aCustomer.paymentHistory.weeksDelinquentInLastYear;
