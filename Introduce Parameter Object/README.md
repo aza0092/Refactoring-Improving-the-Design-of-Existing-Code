@@ -1,4 +1,4 @@
-![Pr-Obj](Pr-Obj.PNG)
+[Pr-Obj](Pr-Obj.PNG)
 
 # Introduce Parameter Object
 
@@ -12,3 +12,5 @@
 - Create data structure, usually via a class
 - Use Change Function Declaration to add a parameter for the new structure
 - For each element of the new structure, replace the use of the original parameter with the element of the structure
+
+[Example](https://github.com/aza0092/Refactoring-Improving-the-Design-of-Existing-Code/commit/7dc1082743248d19523b9211699bfbf52b0d2fdd)
