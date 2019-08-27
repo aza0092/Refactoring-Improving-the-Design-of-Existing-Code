@@ -1,7 +1,3 @@
-/* 
-  This code that looks at a set of temperature readings 
-  and determines whether any of them fall outside of an operating range 
-*/
 const station = { name: "ZB1",
                     readings: [
                       {temp: 47, time: "2016-11-10 09:10"},
@@ -12,15 +8,20 @@ const station = { name: "ZB1",
                     ]
                   };
 				  
-/* 
-  This function finds the readings that are outside a temperature range
-*/
-function readingsOutsideRange(station, min, max) {
+function readingsOutsideRange(station, range) {
 	return station.readings
-      .filter(r => r.temp < min || r.temp > max);
+      .filter(r => !range.contains(r.temp));
   }
   
-/*
-  It might be called from some code like this:
-*/
-alerts = readingsOutsideRange(station, operatingPlan.temperatureFloor, operatingPlan.temperatureCeiling);
+const range = new NumberRange(operatingPlan.temperatureFloor, operatingPlan.temperatureCeiling);
+alerts = readingsOutsideRange(station, range);
+
+class NumberRange {
+    constructor(min, max) {
+      this._data = {min: min, max: max};
+    }
+    get min() {return this._data.min;}
+    get max() {return this._data.max;}
+	
+	contains(arg) {return (arg >= this.min && arg <= this.max);}
+  }
