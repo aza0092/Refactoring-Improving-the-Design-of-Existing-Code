@@ -1,4 +1,12 @@
-//A utility company installs its services in sites.
+/*
+Looking through the code base, I see many clients of the site object that have to deal with
+an unknown customer. Most of them do the same thing when they get one: 
+They use "occupant" as the name, 
+give them a basic billing plan, 
+and class them as zero-weeks delinquent. 
+This widespread testing for a special case, plus a common response, 
+is what tells me it's time for a Special Case Object.
+*/
 
 class Site {
   get customer() {return this._customer;}
@@ -12,7 +20,21 @@ class Customer {
   get billingPlan()     {...}
   set billingPlan(arg)  {...}
   get paymentHistory()  {...}
+  get isUnknown() {return false;} //I begin by adding method to unkown customer
 }
+
+
+// I then add an Unknown Customer class
+class UnknownCustomer {
+  get isUnknown() {return true;}
+  
+  function isUnknown(arg) {
+  if (!((arg instanceof Customer) || (arg === "unknown")))
+    throw new Error(`investigate bad value: <${arg}>`);
+  return (arg === "unknown");
+ }
+}
+
 
 // Most of the time, a site has a customer, 
 // but sometimes there isn't one. Someone may have moved out and I don't yet know who, 
